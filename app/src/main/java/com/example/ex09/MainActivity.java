@@ -13,13 +13,15 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    EditText eT = findViewById(R.id.eT);
-    Button clickme = findViewById(R.id.clickme);
+    EditText eT;
+    Button clickme;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        eT = findViewById(R.id.eT);
+        clickme = findViewById(R.id.clickme);
 
     }
 
@@ -28,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
         int num = Integer.parseInt(in);
         Log.i("eT", "" + num);
         if (num % 7 != 0) {
-            clickme.setText(num);
-        } else clickme.setText("BOOM");
+            clickme.setText(in);
+        }
+        else clickme.setText("BOOM");
+
     }
 }
